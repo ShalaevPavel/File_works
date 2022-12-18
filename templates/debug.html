@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function(event) {
+            b = document.getElementById("bu");
+            b.addEventListener("click", function show_(){
+            document.querySelector('#show').innerHTML = {{ text_ }};
+
+            });
+
+        });
+    </script>
+</head>
+<body>
+    {% for onj in objs %}
+
+        {{ onj.input_file }}
+
+    {% endfor %}
+    <div id="show"></div>
+    <button id="bu">Show text</button>
+</body>
+</html>

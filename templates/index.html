@@ -1,0 +1,160 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - File works</title>
+    <link rel="stylesheet" href="../../static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="../../static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/assets/fonts/simple-line-icons.min.css">
+    <script type="text/javascript">
+        function hide_func(){
+      document.querySelector('#to_insert').innerHTML = '';}
+
+        function show_encrypt(){
+            fetch('{% url "encrypt" %}').then(response => response.text()).then(
+                data => {
+                    document.querySelector('#to_insert').innerHTML = data;
+                }
+            )
+        }
+
+        function build(){
+            fetch('{% url "build" %}').then(response => response.text()).then(
+                data => {
+                    document.querySelector('#to_insert').innerHTML = data;
+                }
+            )
+        }
+    </script>
+</head>
+
+<body id="page-top"><a class="menu-toggle rounded" href="#"><i class="fa fa-bars"></i></a>
+    <nav class="navbar navbar-light navbar-expand" id="sidebar-wrapper">
+        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler d-none" data-bs-target="#"></button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav sidebar-nav" id="sidebar-nav">
+                    <li class="nav-item sidebar-brand"><a class="nav-link active js-scroll-trigger" href="#page-top">File works</a></li>
+                    <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#page-top">Home</a></li>
+                    <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#about">Form</a></li>
+                    <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                    <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Tools</a></li>
+                    <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="d-flex masthead" style="background-image:url('/static/assets/img/bg-masthead.jpg');">
+        <div class="container my-auto text-center">
+            <h1 class="mb-1">File Encription/Zipping</h1>
+            <h3 class="mb-5"><em>Use it for manipulations with files</em></h3><a id="encrypt_button" class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#about" onclick=" return show_encrypt();">Encrypt url</a><a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#about" onclick="return build();">Build</a>
+            <div class="overlay"></div>
+        </div>
+    </header>
+    <section id="about" class="content-section bg-light">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h2>Choose your file&nbsp;</h2>
+                    <div id="to_insert">
+
+                    </div>
+                    <p class="lead mb-5"><span>Feel free to drag a file on your computer</span><span>!</span></p><a id="hide_button" class="btn btn-dark btn-xl js-scroll-trigger" role="button" href="#about" onclick="return hide_func();">Hide all&nbsp;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services" class="content-section bg-primary text-white text-center">
+        <div class="container">
+            <div class="content-section-heading">
+                <h3 class="text-secondary mb-0">Services</h3>
+                <h2 class="mb-5">What We Offer</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i class="icon-screen-smartphone"></i></span>
+                    <h4><strong>Encryption</strong></h4>
+                    <p class="mb-0 text-faded">Decrypt is also available</p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i class="icon-pencil"></i></span>
+                    <h4><strong>Zipping</strong></h4>
+                    <p class="mb-0 text-faded">Unzipping is also available</p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i class="icon-like"></i></span>
+                    <h4><strong>Evaluation</strong></h4>
+                    <p class="mb-0 text-faded"><span>Calculating the result of math expressions</span><span></span></p>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-5 mb-lg-0"><span class="mx-auto service-icon rounded-circle mb-3"><i class="icon-mustache"></i></span>
+                    <h4><strong>Parsing</strong></h4>
+                    <p class="mb-0 text-faded">Doesn't matter whether it is txt, json or xml</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="portfolio" class="content-section">
+        <div class="container">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary mb-0">Tools</h3>
+                <h2 class="mb-5">Design Patterns</h2>
+            </div>
+            <div class="row g-0">
+                <div class="col-lg-6"><a class="portfolio-item" href="#">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>Facade</h2>
+                                <p class="mb-0">Used as form</p>
+                            </div>
+                        </div><img class="img-fluid" src="/static/assets/img/facade.png">
+                    </a></div>
+                <div class="col-lg-6"><a class="portfolio-item" href="#">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>Decorator</h2>
+                                <p class="mb-0">For  builder implementation</p>
+                            </div>
+                        </div><img class="img-fluid" src="../../static/assets/img/decor.png">
+                    </a></div>
+                <div class="col-lg-6"><a class="portfolio-item" href="#">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>Builder</h2>
+                                <p class="mb-0">Encryption, decryption, zipping, unzipping</p>
+                            </div>
+                        </div><img class="img-fluid" src="../../static/assets/img/builder.png">
+                    </a></div>
+                <div class="col-lg-6"><a class="portfolio-item" href="#">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <h2>Observer</h2>
+                                <p class="mb-0">Front end state changing</p>
+                            </div>
+                        </div><img class="img-fluid" src="../../static/assets/img/observer.png">
+                    </a></div>
+            </div>
+        </div>
+    </section>
+{#    <section class="content-section bg-primary text-white">#}
+{#        <div class="container text-center">#}
+{#            <h2 class="mb-4">The buttons below are impossible to resist..</h2><a class="btn btn-light btn-xl me-4" role="button" href="#">Click Me!</a><a class="btn btn-dark btn-xl me-4" role="button" href="#">Look at Me</a>#}
+{#        </div>#}
+{#    </section>#}
+    <section id="contact" class="map" style="background-image:url('/static/assets/img/bg-masthead.jpg');"></section>
+    <footer class="footer text-center">
+        <div class="container">
+            <ul class="list-inline mb-5">
+                <li class="list-inline-item">&nbsp;<a class="link-light social-link rounded-circle" href="https://www.facebook.com/pavel.shalaev.710"><i class="icon-social-facebook"></i></a></li>
+                <li class="list-inline-item">&nbsp;<a class="link-light social-link rounded-circle" href="https://www.linkedin.com/in/pavel-shalaev-b71b23204/"><i class="icon-social-linkedin"></i></a></li>
+                <li class="list-inline-item">&nbsp;<a class="link-light social-link rounded-circle" href="https://github.com/ShalaevPavel"><i class="icon-social-github"></i></a></li>
+            </ul>
+            <p class="text-muted mb-0 small">Copyright &nbsp;© File works 2022</p>
+        </div><a class="js-scroll-trigger scroll-to-top rounded" href="#page-top"><i class="fa fa-angle-up"></i></a>
+    </footer>
+    <script src="../../static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../../static/assets/js/stylish-portfolio.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load crispy_forms_tags %}
+    <meta charset="UTF-8">
+    <title>Build</title>
+</head>
+<body>
+    <div style="  background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet, red); width: 100%">
+    <form method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+
+        <input type="submit" value="Submit">
+    </form>
+        </div>
+</body>
+</html>
