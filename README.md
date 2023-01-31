@@ -1,5 +1,5 @@
 # File_works
-[static version only!](http://chemistryandmagicexperiments.me)
+[static version only!](https://www.chemistryandmagicexperiments.me/)
 #### Actions
 1. Decrypting
 2. Unzipping
